@@ -18,14 +18,14 @@ public class PetPOJO {
 
     private String image;
 
-    private String owner_Id;
+    private int owner_Id;
 
     public PetPOJO() {
     }
 
     public PetPOJO(int pet_id, String microchip,
                    String name, String species, String race,
-                   String size, String sex, String image, String owner_Id) {
+                   String size, String sex, String image, int owner_Id) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;
@@ -101,11 +101,11 @@ public class PetPOJO {
         this.image = image;
     }
 
-    public String getOwner_Id() {
+    public int getOwner_Id() {
         return owner_Id;
     }
 
-    public void setOwner_Id(String owner_Id) {
+    public void setOwner_Id(int owner_Id) {
         this.owner_Id = owner_Id;
     }
 }
