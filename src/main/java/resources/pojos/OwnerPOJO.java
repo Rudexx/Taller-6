@@ -1,5 +1,7 @@
 package resources.pojos;
 
+import java.util.List;
+
 public class OwnerPOJO {
     private int person_id;
 
@@ -9,14 +11,17 @@ public class OwnerPOJO {
 
     private String neighborhood;
 
+    private List<String> pet;
+
     public OwnerPOJO() {
     }
 
-    public OwnerPOJO(int person_id, String name, String address, String neighborhood) {
+    public OwnerPOJO(int person_id, String name, String address, String neighborhood, List<String> pet) {
         this.person_id = person_id;
         this.name = name;
         this.address = address;
         this.neighborhood = neighborhood;
+        this.pet = pet;
     }
 
     public int getPerson_id() {
@@ -49,5 +54,13 @@ public class OwnerPOJO {
 
     public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
+    }
+
+    public List<String> getPet() {
+        return pet;
+    }
+
+    public void setPet(List<String> pet) {
+        this.pet = pet;
     }
 }

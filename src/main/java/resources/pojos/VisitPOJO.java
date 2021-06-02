@@ -6,7 +6,7 @@ public class VisitPOJO {
 
     private int visit_Id;
 
-    private Date created_At;
+    private String created_At;
 
     private String type;
 
@@ -19,7 +19,7 @@ public class VisitPOJO {
     public VisitPOJO() {
     }
 
-    public VisitPOJO(int visit_Id, Date created_At, String type, String description, int vet_Id, int pet_Id) {
+    public VisitPOJO(int visit_Id, String created_At, String type, String description, int vet_Id, int pet_Id) {
         this.visit_Id = visit_Id;
         this.created_At = created_At;
         this.type = type;
@@ -37,11 +37,11 @@ public class VisitPOJO {
         this.visit_Id = visit_Id;
     }
 
-    public Date getCreated_At() {
+    public String getCreated_At() {
         return created_At;
     }
 
-    public void setCreated_At(Date created_At) {
+    public void setCreated_At(String created_At) {
         this.created_At = created_At;
     }
 
