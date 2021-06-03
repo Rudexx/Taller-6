@@ -15,12 +15,12 @@ public class  DiscriminatedCasesResource{
     public Response discriminated(@PathParam("personId") Integer personId, @PathParam("petId") Integer petId) {
 
 
-        CasePOJO case1 = new CasePOJO(1,"1-Mayo-2010","Esterilizacion","Primera esterilización",petId);
-        CasePOJO case2 = new CasePOJO(2,"2-Mayo-2001","vacunación","Segunda Vacuna",petId);
-        CasePOJO case3 = new CasePOJO(3,"3-Mayo-2018","implantación de microchip","Implatancion, por perdida",petId);
-        CasePOJO case4 = new CasePOJO(4,"4-Mayo-2012","Esterilizacion","Segunda esterilización",petId);
-        CasePOJO case5 = new CasePOJO(5,"5-Mayo-2017","Urgencia y control","Corte grave",petId);
-        CasePOJO case6 = new CasePOJO(6,"4-Mayo-2006","vacunación","Vacuna contra la rabia",petId);
+        CasePOJO case1 = new CasePOJO(1,"1-Mayo-2010","Robo","Robo a mano armada",petId);
+        CasePOJO case2 = new CasePOJO(2,"2-Mayo-2001","Perdida","Perdida por descuido",petId);
+        CasePOJO case3 = new CasePOJO(3,"3-Mayo-2018","Perdida","Perdida en el parque",petId);
+        CasePOJO case4 = new CasePOJO(4,"4-Mayo-2012","Robo","Robo de casa",petId);
+        CasePOJO case5 = new CasePOJO(5,"5-Mayo-2017","Fallecio","Accidente de transito",petId);
+        CasePOJO case6 = new CasePOJO(6,"4-Mayo-2006","Fallecio","Riña entre perros",petId);
 
         List<CasePOJO> list = new ArrayList<CasePOJO>();
         list.add(case1);
