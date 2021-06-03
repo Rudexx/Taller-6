@@ -5,6 +5,7 @@ import resources.pojos.PetPOJO;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -15,7 +16,7 @@ public class DiscriminatePetsResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public Response count() {
+    public Response count(@PathParam("ownerid") Integer ownerid) {
         OwnerPOJO persona = new OwnerPOJO();
         PetPOJO pet1 = new PetPOJO(1,"Animalito1","Adolfo","Cat","DeBarrio","small","Macho", null,persona,32);
         PetPOJO pet2 = new PetPOJO(2,null,"Patricia","Dog","Extranjero","Mediano","Female",null,persona,12);

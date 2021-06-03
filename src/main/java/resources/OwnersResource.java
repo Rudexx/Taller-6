@@ -49,7 +49,7 @@ public class OwnersResource {
         pet2.setOwner(owner1);
         owners.add(owner1);
 
-        OwnerPOJO owner2 = new OwnerPOJO(2, "David Jose Nogales León",
+        OwnerPOJO owner2 = new OwnerPOJO(2, "Daniel Alvarez",
                 "Diagonal 200 3950", "Bogotá", new ArrayList<String>());
         pet1 = new PetPOJO(1, "MAAAA5421", "Fernand", "Feline", "Siberiano", "Big",
                 "Male", "Fernand.jpg", new OwnerPOJO(), 2);

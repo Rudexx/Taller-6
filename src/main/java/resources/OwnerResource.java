@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 @Path("/owners/{id}")
 public class OwnerResource {
 
-    @POST
+    @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("id") Integer id, OwnerPOJO owner) {

@@ -143,7 +143,7 @@ public class PetsResource {
                             }
                         }
                         return Response.status(Response.Status.NOT_FOUND).
-                                entity("Owner Not Found")
+                                entity("Pets Not Found")
                                 .build();
 
 

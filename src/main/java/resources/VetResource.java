@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 @Path("/vets/{username}")
 public class VetResource {
 
-    @POST
+    @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("username") String username, VetPOJO vet) {
