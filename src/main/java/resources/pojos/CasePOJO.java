@@ -19,7 +19,7 @@ public class CasePOJO {
     public CasePOJO() {
     }
 
-    public CasePOJO(int case_id, String created_At, String type, String description, int pet_Id) throws ParseException {
+    public CasePOJO(int case_id, String created_At, String type, String description, int pet_Id)  {
         this.case_id = case_id;
         this.created_At = created_At;
         this.type = type;
