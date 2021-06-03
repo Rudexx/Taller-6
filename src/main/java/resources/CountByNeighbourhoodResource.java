@@ -7,9 +7,9 @@ import resources.pojos.PetPOJO;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.ArrayList;
-import java.util.List;
-@Path("owners")
+import java.util.*;
+
+@Path("owners/neighbourhoods")
 public class CountByNeighbourhoodResource {
 
 
@@ -36,7 +36,7 @@ public class CountByNeighbourhoodResource {
                 "Diagonal 214 3950", "Cali", new ArrayList<String>());
 
         OwnerPOJO owner6 = new OwnerPOJO(6, "Amy",
-                "Diagonal 211 3950", "Cali", new ArrayList<String>());
+                "Diagonal 211 3950", "Cundinamarca", new ArrayList<String>());
 
         OwnerPOJO owner7 = new OwnerPOJO(7, "Roxanna",
                 "Diagonal 500 3950", "Tunja", new ArrayList<String>());
@@ -45,6 +45,9 @@ public class CountByNeighbourhoodResource {
                 "Diagonal 300 3950", "Tunja", new ArrayList<String>());
 
         OwnerPOJO owner9 = new OwnerPOJO(9, "Liliana",
+                "Diagonal 227 3950", "Tunja", new ArrayList<String>());
+
+        OwnerPOJO owner10 = new OwnerPOJO(10, "Mariana",
                 "Diagonal 227 3950", "Tunja", new ArrayList<String>());
 
         list.add(owner1);
@@ -56,23 +59,37 @@ public class CountByNeighbourhoodResource {
         list.add(owner7);
         list.add(owner8);
         list.add(owner9);
+        list.add(owner10);
+
 
         List<String> neighbourhoods = new ArrayList<String>();
         int number = 0;
 
         for (int i = 0; i <list.size() ; i++) {
-            String n = list.get(i).getNeighborhood();
-            if(i != 0 && list.get(i).getNeighborhood() == list.get(i-1).getNeighborhood()) {
+         neighbourhoods.add(list.get(i).getNeighborhood());
+        }
 
-            }else{
-                number++;
+        Collections.sort(neighbourhoods);
+
+        Map<String, Integer> counts = new HashMap<String, Integer>();
+
+        for (String str : neighbourhoods) {
+            if (counts.containsKey(str)) {
+                counts.put(str, counts.get(str) + 1);
+            } else {
+                counts.put(str, 1);
             }
+        }
+        String resultado = "Propietarios por localidad\n";
+
+        for (Map.Entry<String, Integer> entry : counts.entrySet()) {
+            resultado = resultado + (entry.getKey() + " = " + entry.getValue()) + "\n";
         }
 
 
 
-        return Response.status(Response.Status.NOT_FOUND).
-                entity("holaaaaaaaaaa")
+        return Response.status(Response.Status.OK).
+                entity(resultado)
                 .build();
     }
 }
